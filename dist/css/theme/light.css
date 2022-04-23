@@ -1,0 +1,67 @@
+.editor-textarea::selection {
+    background-color: #0044ff60;
+}
+
+.auto-div {
+    background-color: rgb(207, 207, 207);
+    box-shadow: 2px 2px 5px rgb(100, 100, 100);
+}
+
+.auto-div span{
+    color: rgb(27, 27, 27) !important;
+}
+
+.auto-div .active{
+    background-color: #0084ff60;
+}
+
+.row-col {
+    color: black;
+    background-color: rgb(175, 175, 175);
+    box-shadow: 0px -2px 5px rgb(175, 175, 175);
+}
+
+.editor-textarea {
+    caret-color: rgb(0, 0, 0);
+}
+
+.editor-pre {
+    color: rgb(32, 32, 32);
+    background-color: rgb(233, 233, 233);
+}
+
+.editor .keywords {
+    color: rgb(0, 56, 128);
+}
+
+.editor .operator {
+    color: rgb(59, 59, 59);
+}
+
+.editor .functions {
+    color: rgb(159, 109, 0);
+}
+
+.editor .comment {
+    color: rgb(0, 93, 9);
+}
+
+.editor .integer {
+    color: rgb(41, 141, 33);
+}
+
+.editor .string {
+    color: rgb(202, 97, 0);
+}
+
+.editor .constant {
+    color: rgb(30, 98, 161);
+}
+
+.editor .include {
+    color: rgb(135, 0, 0);
+}
+
+.editor .variable {
+    color: rgb(34, 112, 186);
+}

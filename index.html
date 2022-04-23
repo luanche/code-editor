@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <title>Editor Dev</title>
+    <link rel="shortcut icon" href="./dist/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./dist/css/icons.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/editor.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/theme/light.css" id="theme-light">
+    <link rel="stylesheet" type="text/css" href="./dist/css/theme/dark.css" id="theme-dark">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<style>
+    .container {
+        width: 60%;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+
+    .btn {
+        width: 200px;
+        padding: 8px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        /* future proofing */
+        -khtml-border-radius: 10px;
+        /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 600;
+        font-size: 125%
+    }
+
+    .btn-light {
+        background-color: #4284be;
+        border-color: #3f91da;
+        color: #000
+    }
+
+    .btn-dark {
+        background-color: #2b577c;
+        border-color: #2b6292;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div>
+            <button type="button" id="theme-switch" class="btn btn-dark">Dark Mode</button>
+        </div>
+        <div>
+            <h4>C</h4>
+            <div id="editor-outter-c"></div>
+        </div>
+        <div>
+            <h4>C++</h4>
+            <div id="editor-outter-cpp"></div>
+        </div>
+        <div>
+            <h4>Python</h4>
+            <div id="editor-outter-python"></div>
+        </div>
+    </div>
+    <script src="./dist/editor.js"></script>
+    <script src="./dist/language/c.js"></script>
+    <script src="./dist/language/cpp.js"></script>
+    <script src="./dist/language/python.js"></script>
+    <script>
+
+        var editor_c = new Editor("editor-outter-c", {
+            language: 'c'
+        });
+        var editor_cpp = new Editor("editor-outter-cpp", {
+            language: 'cpp'
+        });
+        var editor_python = new Editor("editor-outter-python", {
+            language: 'python'
+        });
+
+
+
+        $("#theme-light").attr("disabled", true);
+        $("#theme-dark").attr("disabled", false)
+        $("#theme-switch").click(function () {
+            $("#theme-light").attr("disabled", !$("#theme-light").attr("disabled"));
+            $("#theme-dark").attr("disabled", !$("#theme-dark").attr("disabled"));
+
+            if ($("#theme-dark").attr("disabled")) {
+                $("#theme-switch").attr("class", "btn btn-light");
+                $("#theme-switch").html("Light Mode");
+            } else {
+                $("#theme-switch").attr("class", "btn btn-dark");
+                $("#theme-switch").html("Dark Mode");
+            }
+        })
+    </script>
+</body>
+
+</html>
